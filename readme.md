@@ -1,23 +1,35 @@
-# 🧠 Reconhecimento Facial com MediaPipe e face_recognition
+## Integrantes
+- Anny Carolina Andrade Dias | RM98295
+- Fernanda Kaory Saito | RM551104
+- Henrique Lima | RM551528
+- Pedro Emerici Gava | RM551043
+- Pedro Henrique Menezes | RM97432
+
+# HealthBet
+
+[![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)](https://github.com/seu-usuario/seu-repositorio)  
+[![React Native](https://img.shields.io/badge/React_Native-0.71-blue)](https://reactnative.dev/)  
+
+# Reconhecimento Facial com MediaPipe e face_recognition
 
 Este projeto realiza **reconhecimento facial em tempo real** utilizando a webcam, combinando as bibliotecas **MediaPipe** (para detecção facial e landmarks) e **face_recognition** (para identificação de rostos conhecidos). Ele também permite o ajuste dinâmico de parâmetros via interface com sliders (trackbars).
 
 ---
 
-## 🎯 Objetivo
+## Objetivo
 
 O objetivo deste projeto é detectar rostos em tempo real e identificar se o rosto capturado pela webcam corresponde a uma imagem previamente conhecida (neste caso, `foto_fernanda.jpg`). Além disso, o sistema exibe landmarks faciais (olhos, nariz, boca) e permite o ajuste de parâmetros como confiança, modelo de detecção, tolerância de reconhecimento e redimensionamento do frame.
 
 ---
 
-## ▶️ Como Executar
+## Como Executar
 
 1. **Clone o repositório** ou copie os arquivos para seu ambiente local.
-2. Certifique-se de ter uma imagem chamada `foto_fernanda.jpg` no mesmo diretório do script.
+2. Certifique-se de ter uma imagem chamada `foto_perfil.jpg` no diretório chamado "images".
 3. Execute o script Python:
 
 ```bash
-python nome_do_arquivo.py
+python face_recognition.py
 ```
 
 4. Uma janela chamada **"Controles"** será aberta com sliders para ajustar os parâmetros em tempo real.
@@ -26,15 +38,15 @@ python nome_do_arquivo.py
 
 ---
 
-## 💻 Ambiente de Desenvolvimento
+## Ambiente de Desenvolvimento
 
-- **Python**: 3.10 (recomendado)
-- **IDE recomendada**: [PyCharm](httpsta a organização e execução do projeto)
+- **Python**: 3.10 (recomendado para suporte ao MediaPipe)
+- **IDE recomendada**: [PyCharm](organização e execução do projeto)
 - **Sprint**: Projeto desenvolvido na Sprint de IoT
 
 ---
 
-## 📦 Dependências
+## Dependências
 
 Instale as bibliotecas necessárias com os seguintes comandos:
 
@@ -49,7 +61,7 @@ pip install git+https://github.com/ageitgey/face_recognition_models
 
 ---
 
-## 🎛️ Parâmetros Ajustáveis
+## Parâmetros Ajustáveis
 
 Durante a execução, você pode ajustar os seguintes parâmetros na janela **"Controles"**:
 
@@ -62,7 +74,7 @@ Durante a execução, você pode ajustar os seguintes parâmetros na janela **"C
 
 ---
 
-## 🧠 Organização do Código
+## Organização do Código
 
 O código está dividido em seções bem definidas:
 
@@ -80,7 +92,7 @@ O código está dividido em seções bem definidas:
 
 ---
 
-## ⚖️ Nota Ética sobre Uso de Dados Faciais
+## Nota Ética sobre Uso de Dados Faciais
 
 Este projeto utiliza **dados faciais sensíveis** e, portanto, deve ser usado com responsabilidade. Algumas considerações importantes:
 
@@ -92,7 +104,7 @@ Este projeto utiliza **dados faciais sensíveis** e, portanto, deve ser usado co
 
 ---
 
-## 📌 Observações Finais
+## Observações Finais
 
 - O desempenho pode variar dependendo da iluminação, qualidade da webcam e posicionamento do rosto.
 - Ajuste os parâmetros para obter melhores resultados em diferentes ambientes.
@@ -100,11 +112,4 @@ Este projeto utiliza **dados faciais sensíveis** e, portanto, deve ser usado co
 - O projeto pode ser expandido para múltiplos rostos conhecidos, salvamento de logs, ou integração com bancos de dados.
 - Testado com Python 3.10 e bibliotecas compatíveis com essa versão.
 
----
 
-## 👩‍💻 Autora
-
-**Fernanda Kaory Saito**  
-Projeto desenvolvido para fins acadêmicos na Sprint de IoT.
-
----
