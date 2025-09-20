@@ -57,8 +57,8 @@ pip install face-recognition --no-deps
 pip install git+https://github.com/ageitgey/face_recognition_models
 ```
 
-> ⚠️ A biblioteca `face_recognition` depende do `dlib`, que pode ser difícil de compilar. Por isso, foi utilizado o pacote `dlib-bin` para facilitar a instalação.
-> ⚠️ O MediaPipe é compatível apenas até a versão Python 3.11. Portanto, recomenda-se a utilização em um ambiente virtual (.venv).
+<p> ⚠️ A biblioteca `face_recognition` depende do `dlib`, que pode ser difícil de compilar. Por isso, foi utilizado o pacote `dlib-bin` para facilitar a instalação.  </p>
+<p> ⚠️ O MediaPipe é compatível apenas até a versão Python 3.11. Portanto, recomenda-se a utilização em um ambiente virtual (.venv). </p>
 
 ---
 
