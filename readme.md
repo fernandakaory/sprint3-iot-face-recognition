@@ -10,6 +10,7 @@
 [![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)](https://github.com/seu-usuario/seu-repositorio)  
 
 # Reconhecimento Facial com MediaPipe e face_recognition
+<p>Link do Youtube: https://youtu.be/rSxpzyVi1gg </p>
 
 Este projeto realiza **reconhecimento facial em tempo real** utilizando a webcam, combinando as bibliotecas **MediaPipe** (para detecção facial e landmarks) e **face_recognition** (para identificação de rostos conhecidos). Ele também permite o ajuste dinâmico de parâmetros via interface com sliders (trackbars).
 
