@@ -8,7 +8,6 @@
 # HealthBet
 
 [![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)](https://github.com/seu-usuario/seu-repositorio)  
-[![React Native](https://img.shields.io/badge/React_Native-0.71-blue)](https://reactnative.dev/)  
 
 # Reconhecimento Facial com MediaPipe e face_recognition
 
@@ -26,11 +25,11 @@ O objetivo deste projeto é detectar rostos em tempo real e identificar se o ros
 
 1. **Clone o repositório** ou copie os arquivos para seu ambiente local.
 2. Utilize o projeto no PyCharm com um .verv Python 3.11 (para utilização do MediaPipe)
-3. Certifique-se de ter uma imagem chamada `foto_perfil.jpg` no diretório chamado "images".
+3. Certifique-se de ter uma imagem chamada `foto_perfil.jpg` no mesmo diretório do projeto.
 4. Execute o script Python:
 
 ```bash
-python face_recognition.py
+python face_recognition_sprint.py
 ```
 
 4. Uma janela chamada **"Controles"** será aberta com sliders para ajustar os parâmetros em tempo real.
@@ -59,6 +58,7 @@ pip install git+https://github.com/ageitgey/face_recognition_models
 ```
 
 > ⚠️ A biblioteca `face_recognition` depende do `dlib`, que pode ser difícil de compilar. Por isso, foi utilizado o pacote `dlib-bin` para facilitar a instalação.
+> ⚠️ O MediaPipe é compatível apenas até a versão Python 3.11. Portanto, recomenda-se a utilização em um ambiente virtual (.venv).
 
 ---
 
@@ -97,7 +97,7 @@ O código está dividido em seções bem definidas:
 
 Este projeto utiliza **dados faciais sensíveis** e, portanto, deve ser usado com responsabilidade. Algumas considerações importantes:
 
-- A imagem usada para reconhecimento (`foto_fernanda.jpg`) deve ser de **uso pessoal e autorizado**.
+- A imagem usada para reconhecimento (`foto_perfil.jpg`) deve ser de **uso pessoal e autorizado**.
 - Evite utilizar imagens de terceiros sem consentimento explícito.
 - Este projeto é **educacional** e não deve ser utilizado para fins de vigilância, discriminação ou qualquer uso que viole a privacidade e os direitos individuais.
 - Sempre informe os usuários quando estiver capturando ou processando imagens faciais.
@@ -109,8 +109,8 @@ Este projeto utiliza **dados faciais sensíveis** e, portanto, deve ser usado co
 
 - O desempenho pode variar dependendo da iluminação, qualidade da webcam e posicionamento do rosto.
 - Ajuste os parâmetros para obter melhores resultados em diferentes ambientes.
-- Certifique-se de que a imagem de referência (`foto_fernanda.jpg`) esteja bem iluminada e com o rosto visível.
+- Certifique-se de que a imagem de referência (`foto_perfil.jpg`) esteja bem iluminada e com o rosto visível.
 - O projeto pode ser expandido para múltiplos rostos conhecidos, salvamento de logs, ou integração com bancos de dados.
-- Testado com Python 3.10 e bibliotecas compatíveis com essa versão.
+- Testado com Python 3.11 e bibliotecas compatíveis com essa versão.
 
 
