@@ -13,7 +13,7 @@ FRAME_RESIZE_DEFAULT = 0.75
 # ==========================
 # 1. Carregar rosto conhecido
 # ==========================
-known_image = face_recognition.load_image_file("foto_perfil.jpg")  # foto do usuário
+known_image = face_recognition.load_image_file("foto_perfil2.jpg")
 known_encoding = face_recognition.face_encodings(known_image)[0]
 
 # ==========================
