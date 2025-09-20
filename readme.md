@@ -25,8 +25,9 @@ O objetivo deste projeto é detectar rostos em tempo real e identificar se o ros
 ## Como Executar
 
 1. **Clone o repositório** ou copie os arquivos para seu ambiente local.
-2. Certifique-se de ter uma imagem chamada `foto_perfil.jpg` no diretório chamado "images".
-3. Execute o script Python:
+2. Utilize o projeto no PyCharm com um .verv Python 3.11 (para utilização do MediaPipe)
+3. Certifique-se de ter uma imagem chamada `foto_perfil.jpg` no diretório chamado "images".
+4. Execute o script Python:
 
 ```bash
 python face_recognition.py
@@ -40,7 +41,7 @@ python face_recognition.py
 
 ## Ambiente de Desenvolvimento
 
-- **Python**: 3.10 (recomendado para suporte ao MediaPipe)
+- **Python**: 3.11 (recomendado para suporte ao MediaPipe)
 - **IDE recomendada**: [PyCharm](organização e execução do projeto)
 - **Sprint**: Projeto desenvolvido na Sprint de IoT
 
