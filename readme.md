@@ -1,6 +1,13 @@
 # 🧠 HealthBet — Reconhecimento Facial Integrado à API
+## 👩‍💻 Integrantes
+- Anny Carolina Andrade Dias — RM98295  
+- Fernanda Kaory Saito — RM551104  
+- Henrique Lima — RM551528  
+- Pedro Emerici Gava — RM551043  
+- Pedro Henrique Menezes — RM97432
 
 ## 📋 Descrição
+Link do Youtube: https://youtu.be/NgOEcw4lV34
 
 Este projeto implementa um **sistema de reconhecimento facial** conectado à **API HealthBet**, permitindo o registro automático de acessos de usuários a partir da detecção facial via webcam.  
 
@@ -10,7 +17,7 @@ Além disso, o sistema oferece um menu interativo no console para:
 - Visualizar acessos registrados de um usuário (`GET /usuario/{id}/acessos`)
 - Realizar um novo login com reconhecimento facial
 - Encerrar o programa
-
+  
 ---
 
 ## ⚙️ Tecnologias Utilizadas
@@ -143,11 +150,3 @@ http://localhost:8080/swagger-ui/index.html
 
 
 ---
-
-## 👩‍💻 Integrantes
-
-- Anny Carolina Andrade Dias — RM98295  
-- Fernanda Kaory Saito — RM551104  
-- Henrique Lima — RM551528  
-- Pedro Emerici Gava — RM551043  
-- Pedro Henrique Menezes — RM97432
