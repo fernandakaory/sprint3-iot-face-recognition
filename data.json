@@ -1,0 +1,16 @@
+{
+  "usuarios": [
+    {
+      "id": 3,
+      "caminho": "foto_perfil1.jpg"
+    },
+    {
+      "id": 8,
+      "caminho": "foto_perfil2.jpg"
+    },
+    {
+      "id": 12,
+      "caminho": "foto_perfil3.png"
+    }
+  ]
+}

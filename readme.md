@@ -1,53 +1,71 @@
-## Integrantes
-- Anny Carolina Andrade Dias | RM98295
-- Fernanda Kaory Saito | RM551104
-- Henrique Lima | RM551528
-- Pedro Emerici Gava | RM551043
-- Pedro Henrique Menezes | RM97432
+# 🧠 HealthBet — Reconhecimento Facial Integrado à API
 
-# HealthBet
+## 📋 Descrição
 
-[![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)](https://github.com/seu-usuario/seu-repositorio)  
+Este projeto implementa um **sistema de reconhecimento facial** conectado à **API HealthBet**, permitindo o registro automático de acessos de usuários a partir da detecção facial via webcam.  
 
-# Reconhecimento Facial com MediaPipe e face_recognition
-<p>Link do Youtube: https://youtu.be/rSxpzyVi1gg </p>
+O script identifica rostos conhecidos utilizando **MediaPipe**, **OpenCV** e **face_recognition**, consulta um arquivo `data.json` com os dados e imagens dos usuários, e registra automaticamente um novo login na API via requisição `POST`.
 
-Este projeto realiza **reconhecimento facial em tempo real** utilizando a webcam, combinando as bibliotecas **MediaPipe** (para detecção facial e landmarks) e **face_recognition** (para identificação de rostos conhecidos). Ele também permite o ajuste dinâmico de parâmetros via interface com sliders (trackbars).
+Além disso, o sistema oferece um menu interativo no console para:
+- Visualizar acessos registrados de um usuário (`GET /usuario/{id}/acessos`)
+- Realizar um novo login com reconhecimento facial
+- Encerrar o programa
 
 ---
 
-## Objetivo
+## ⚙️ Tecnologias Utilizadas
 
-O objetivo deste projeto é detectar rostos em tempo real e identificar se o rosto capturado pela webcam corresponde a uma imagem previamente conhecida (neste caso, `foto_fernanda.jpg`). Além disso, o sistema exibe landmarks faciais (olhos, nariz, boca) e permite o ajuste de parâmetros como confiança, modelo de detecção, tolerância de reconhecimento e redimensionamento do frame.
+- **Python 3.11**
+- **OpenCV**
+- **MediaPipe**
+- **face_recognition**
+- **Requests**
+- **API REST (Java Spring Boot – HealthBet)**
 
 ---
 
-## Como Executar
-
-1. **Clone o repositório** ou copie os arquivos para seu ambiente local.
-2. Utilize o projeto no PyCharm com um .verv Python 3.11 (para utilização do MediaPipe)
-3. Certifique-se de ter uma imagem chamada `foto_perfil.jpg` no mesmo diretório do projeto.
-4. Execute o script Python:
-
-```bash
-python face_recognition_sprint.py
+## 🧩 Estrutura do Projeto
+```
+├── reconhecimento_facial.py # Script principal em Python
+├── data.json # Arquivo JSON com informações dos usuários
+├── imagens/ # Pasta com imagens dos usuários cadastrados
+└── README.md # Documentação do projeto
 ```
 
-4. Uma janela chamada **"Controles"** será aberta com sliders para ajustar os parâmetros em tempo real.
-5. A janela **"Reconhecimento Facial + Landmarks"** exibirá o vídeo da webcam com as detecções.
-6. Pressione **`q`** para encerrar a execução.
+---
+
+## 📁 Estrutura do Arquivo `data.json`
+
+O arquivo deve conter uma lista de usuários e o caminho das imagens:
+
+```json
+{
+  "usuarios": [
+    {
+      "id": 3,
+      "caminho": "foto_perfil1.jpg"
+    },
+    {
+      "id": 8,
+      "caminho": "foto_perfil2.jpg"
+    },
+    {
+      "id": 12,
+      "caminho": "foto_perfil3.png"
+    }
+  ]
+}
+
+```
+
 
 ---
 
-## Ambiente de Desenvolvimento
+## 🚀 Execução do Projeto
 
-- **Python**: 3.11 (recomendado para suporte ao MediaPipe)
-- **IDE recomendada**: [PyCharm](organização e execução do projeto)
-- **Sprint**: Projeto desenvolvido na Sprint de IoT
+### 1. Instalar Dependências
 
----
-
-## Dependências
+#### Dependências
 
 Instale as bibliotecas necessárias com os seguintes comandos:
 
@@ -63,55 +81,73 @@ pip install git+https://github.com/ageitgey/face_recognition_models
 
 ---
 
-## Parâmetros Ajustáveis
+### 2. Executar o Script
 
-Durante a execução, você pode ajustar os seguintes parâmetros na janela **"Controles"**:
+Após garantir que o arquivo `data.json` está corretamente configurado e a API está rodando localmente, execute:
 
-| Parâmetro     | Descrição                                                                 |
-|---------------|---------------------------------------------------------------------------|
-| **Confianca**     | Nível de confiança para detecção facial (MediaPipe).                     |
-| **Modelo**        | Modelo de detecção: `0` para curto alcance, `1` para longo alcance.      |
-| **Tolerancia**    | Tolerância para comparação de rostos (face_recognition).                 |
-| **Resize**        | Fator de redimensionamento do frame da webcam (para melhorar desempenho).|
+python reconhecimento_facial.py
+
+O menu aparecerá no terminal:
+
+```
+=== MENU ===
+1 - Ver acessos de um usuário (GET)
+2 - Novo login (reconhecimento facial)
+3 - Sair
+```
+---
+
+## 🧠 Como Funciona o Reconhecimento Facial
+
+1. O sistema carrega os **encodings faciais** de cada usuário presente em `data.json`.
+2. A webcam é ativada e o **MediaPipe** detecta rostos e landmarks.
+3. O **face_recognition** compara o rosto capturado com os encodings conhecidos.
+4. Quando há correspondência:
+   - O nome do usuário é exibido na tela.
+   - Um **POST** é enviado automaticamente para `http://localhost:8080/acessos`.
+   - O login é registrado no banco de dados da API.
+
+Pressione `q` para encerrar a janela da webcam.
 
 ---
 
-## Organização do Código
+## 🔗 Endpoints Utilizados
 
-O código está dividido em seções bem definidas:
-
-1. **Configurações iniciais**: parâmetros padrão.
-2. **Carregamento do rosto conhecido**.
-3. **Inicialização do MediaPipe**.
-4. **Criação da interface de controle (trackbars)**.
-5. **Captura de vídeo e loop principal**:
-   - Leitura dos sliders.
-   - Redimensionamento e conversão de cor.
-   - Detecção facial com MediaPipe.
-   - Reconhecimento facial com face_recognition.
-   - Desenho de landmarks e identificação.
-6. **Finalização**: liberação da webcam e fechamento das janelas.
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| GET    | /usuario/{id}/acessos | Retorna os acessos de um usuário |
+| POST   | /acessos               | Registra um novo acesso quando o rosto é reconhecido |
 
 ---
 
-## Nota Ética sobre Uso de Dados Faciais
+## 🤖 Executando o Reconhecimento Facial com a API
 
-Este projeto utiliza **dados faciais sensíveis** e, portanto, deve ser usado com responsabilidade. Algumas considerações importantes:
+Para rodar a integração do **reconhecimento facial** com a API:
 
-- A imagem usada para reconhecimento (`foto_perfil.jpg`) deve ser de **uso pessoal e autorizado**.
-- Evite utilizar imagens de terceiros sem consentimento explícito.
-- Este projeto é **educacional** e não deve ser utilizado para fins de vigilância, discriminação ou qualquer uso que viole a privacidade e os direitos individuais.
-- Sempre informe os usuários quando estiver capturando ou processando imagens faciais.
-- O uso ético da tecnologia é essencial para garantir a confiança e o respeito à privacidade.
+1. Certifique-se de que a **API HealthBet** está em execução localmente (rode o arquivo `HealthbetApplication.java` no IntelliJ e verifique se o Swagger está acessível em [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)).
+2. Execute o script Python responsável pelo reconhecimento facial (`reconhecimento_facial.py`).
+3. Quando um rosto for identificado, o nome do usuário será reconhecido automaticamente e enviado para o endpoint `/acessos` da API, registrando o login de forma automática.
 
 ---
 
-## Observações Finais
+## 💻 Executando a API Localmente
 
-- O desempenho pode variar dependendo da iluminação, qualidade da webcam e posicionamento do rosto.
-- Ajuste os parâmetros para obter melhores resultados em diferentes ambientes.
-- Certifique-se de que a imagem de referência (`foto_perfil.jpg`) esteja bem iluminada e com o rosto visível.
-- O projeto pode ser expandido para múltiplos rostos conhecidos, salvamento de logs, ou integração com bancos de dados.
-- Testado com Python 3.11 e bibliotecas compatíveis com essa versão.
+1. Descompacte o projeto Java HealthBet.
+2. Abra o projeto no **IntelliJ IDEA**.
+3. Localize o arquivo principal:
+ **src/main/java/com/healthbet/HealthbetApplication.java**
+4. Clique com o botão direito e selecione **Run 'HealthbetApplication'**.
+5. Após iniciar, acesse o Swagger da API em:
+
+http://localhost:8080/swagger-ui/index.html
 
 
+---
+
+## 👩‍💻 Integrantes
+
+- Anny Carolina Andrade Dias — RM98295  
+- Fernanda Kaory Saito — RM551104  
+- Henrique Lima — RM551528  
+- Pedro Emerici Gava — RM551043  
+- Pedro Henrique Menezes — RM97432
