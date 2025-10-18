@@ -9,7 +9,7 @@ FACE_MATCH_TOLERANCE_DEFAULT = 0.6
 FRAME_RESIZE_DEFAULT = 0.75
 
 # CARREGAR ROSTO CONHECIDO
-known_image = face_recognition.load_image_file("foto_perfil2.jpg")
+known_image = face_recognition.load_image_file("imagens/foto_perfil2.jpg")
 known_encoding = face_recognition.face_encodings(known_image)[0]
 
 # INICIALIZAR MEDIAPIPE FACE DETECTION
